@@ -7,9 +7,14 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class TriggerVolume : MonoBehaviour
 {
+    [Header("Settings")]
+    [SerializeField]
+    private bool _oneShot = true;
+
     public UnityEvent OnEnterTrigger;
 
     private Collider _collider;
+    private bool _alreadyEntered = false;
 
     [Header("Gizmo Settings")]
     [SerializeField]
@@ -28,8 +33,11 @@ public class TriggerVolume : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //validate object; ie can certain things work with the trigger?
-        
+        if (_oneShot && _alreadyEntered)
+            return;
+
         OnEnterTrigger.Invoke();
+        _alreadyEntered = true;
     }
 
     private void OnDrawGizmos()
