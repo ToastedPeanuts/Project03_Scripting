@@ -24,10 +24,25 @@ public class TriggerVolume : MonoBehaviour
     [SerializeField]
     private Color _gizmoColor = Color.green;
 
+    [Header("Items")]
+    private InventoryManager inventoryManager;
+    [SerializeField]
+    private string itemName;
+
+    [SerializeField]
+    private int quantity;
+
+    [SerializeField]
+    private Sprite sprite;
+
     private void Awake()
     {
         _collider = GetComponent<Collider>();
         _collider.isTrigger = true;
+    }
+    void Start()
+    {
+        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,6 +52,8 @@ public class TriggerVolume : MonoBehaviour
             return;
 
         OnEnterTrigger.Invoke();
+        inventoryManager.AddItem(itemName, quantity, sprite);
+        Destroy(gameObject);
         _alreadyEntered = true;
     }
 
