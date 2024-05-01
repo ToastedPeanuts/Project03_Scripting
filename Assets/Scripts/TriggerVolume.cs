@@ -35,6 +35,10 @@ public class TriggerVolume : MonoBehaviour
     [SerializeField]
     private Sprite sprite;
 
+    [TextArea]
+    [SerializeField]
+    private string itemDescription;
+
     private void Awake()
     {
         _collider = GetComponent<Collider>();
@@ -52,7 +56,7 @@ public class TriggerVolume : MonoBehaviour
             return;
 
         OnEnterTrigger.Invoke();
-        inventoryManager.AddItem(itemName, quantity, sprite);
+        inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
         Destroy(gameObject);
         _alreadyEntered = true;
     }
