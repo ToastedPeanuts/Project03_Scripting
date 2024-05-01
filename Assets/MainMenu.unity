@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6111fb8de49ee43bcd3baa69c18f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _newGameLevel: project03_Testing
+  _newGameLevel: TBD
   noSavedGameDialog: {fileID: 535311419}
 --- !u!4 &278545458
 Transform:
@@ -1215,7 +1215,7 @@ GameObject:
   - component: {fileID: 1224336655}
   - component: {fileID: 1224336654}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2820,7 +2820,7 @@ GameObject:
   - component: {fileID: 1974186851}
   - component: {fileID: 1974186850}
   m_Layer: 5
-  m_Name: Image
+  m_Name: MainMenuBackdrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
