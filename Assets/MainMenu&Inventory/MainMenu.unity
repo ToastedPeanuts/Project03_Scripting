@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6111fb8de49ee43bcd3baa69c18f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _newGameLevel: TBD
+  _newGameLevel: project03_Testing
   noSavedGameDialog: {fileID: 535311419}
 --- !u!4 &278545458
 Transform:
